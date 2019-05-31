@@ -370,6 +370,30 @@ li{
 	box-shadow: 0 0 0 2px rgba(0,0,0,0.03)
 }
 
+.skill-rate {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+}
+
+.skill-rate-item {
+  width: 15px;
+  height: 7.5px;
+  transform: skew(-15deg);
+  background: #D8D8D8;
+  border-radius: 2px;
+  margin: 3px;
+}
+
+.skill-rate-item-full {
+  width: 15px;
+  height: 7.5px;
+  transform: skew(-15deg);
+  background: #40a3d5;
+  border-radius: 2px;
+  margin: 3px;
+}
+
 
 
 #disclaimer code{
