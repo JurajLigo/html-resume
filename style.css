@@ -14,7 +14,7 @@
   --sidebar-width: calc(var(--page-width) - var(--main-width));
   --decorator-horizontal-margin: 0.2in;
 
-  --sidebar-horizontal-padding: 0.2in;
+  --sidebar-horizontal-padding: 0.12in;
 
   /* XXX: using px for very good precision control */
   --decorator-outer-offset-top: 10px;
@@ -71,8 +71,7 @@ li{
   float: right;
   position: relative; /* for disclaimer */
   width: var(--sidebar-width);
-  height: 100%;
-  padding-top: 2rem !important;
+  padding-top: 1rem !important;
   padding: 0.6in var(--sidebar-horizontal-padding);
   background-color: #f2f2f2;
   font-size: 8.0pt;
@@ -87,6 +86,8 @@ li{
 
 #title{
   position: relative;
+  display: flex;
+  align-items: center;
   left: 0.55in;
   line-height: 1.2;
 }
@@ -95,15 +96,27 @@ li{
 	color:darkgray;
 	display:inline-block;
   font-weight: 400;
-  font-size: 18pt;
-  line-height: 1.5;
+  font-size: 25pt;
 }
 
 #title h1.surname{
 	display:inline-block;
   font-weight: 600;
+  font-size: 25pt;
+  color: #40a3d5;
+}
+
+#title h1.senior {
+	display:inline-block;
+  font-weight: 400;
   font-size: 18pt;
-  line-height: 1.5;
+	color:darkgray;
+}
+
+#title h1.enginner {
+	display:inline-block;
+  font-weight: 600;
+  font-size: 18pt;
   color: #40a3d5;
 }
 
@@ -112,10 +125,22 @@ li{
   font-weight: 600;
 }
 
+.title-wrapper {
+  margin-left: .25in;
+}
+
+.title-divider {
+  height: 0.5px;
+  background-color: lightgray;
+  border: none;
+}
+
+
 .subtitle{
 	display:block;
-  font-size: 8pt;
+  font-size: 12pt;
   width: 90%;
+  text-transform: none;
 }
 
 /*** categorial blocks ***/
@@ -130,7 +155,7 @@ li{
   /* XXX: 0.5px for aligning fx printing */
   left: 0.53in;
   font-weight: 400;
-  font-size: 11pt;  
+  font-size: 14pt;  
   color: #40a3d5;
   padding-top:1rem;
   width:90%;
@@ -189,7 +214,7 @@ li{
   flex: 0 0 var(--date-block-width);
   padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
   padding-right: var(--decorator-horizontal-margin);
-  font-size: 7pt;
+  font-size: 8pt;
   text-align: right;
   line-height: 1;
 }
@@ -245,7 +270,7 @@ li{
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
-  background-color: #555;
+  background-color: #40a3d5;
 }
 
 .blocks:last-child .decorator{ /* slightly shortens it */
@@ -254,10 +279,43 @@ li{
 
 /***** fine-tunes on the details block where the real juice is *****/
 
+.profile {
+  font-size: 12pt;
+  word-wrap: normal;
+}
+
+.profile-description {
+  margin-top: 0.1in;
+  margin-left: 0.53in;
+}
+
+.profile-icon {
+  color: #40a3d5;
+  margin-right: 0.05in;
+}
+
+.profile-icon-end {
+  color: #40a3d5;
+  margin-left: 0.05in;
+}
+
 .details{
   flex: 1 0 0;
   padding-left: var(--decorator-horizontal-margin);
   padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important; /* not sure why but this is needed for better alignment */
+  font-size: 11pt;
+}
+
+.details table {
+  margin-top: 0.08in;
+}
+
+.details table td {
+  vertical-align: top;
+}
+
+.details table td:first-child {
+  width: 23%;
 }
 
 .details header{
@@ -265,12 +323,12 @@ li{
 }
 
 .details h3{
-  font-size: 9pt;
+  font-size: 12pt;
   color:#585858;
 }
 
 .main-block:not(.concise) .details div{
-  margin: 0.18in 0 0.1in 0; 
+  /** margin: 0.18in 0 0.1in 0; **/
 }
 
 .main-block:not(.concise) .blocks:last-child .details div{
@@ -285,13 +343,15 @@ li{
 
 .details .place{
   float: left;
-  font-size: 8pt;
+  font-size: 12pt;
   font-style: italic;
   text-decoration: none;
 }
 
 .details .location{
   float: right;
+  font-weight: 300;
+  font-size: 11pt;
 }
 
 .details div{
@@ -338,11 +398,12 @@ li{
 
 #sidebar h1{
   font-weight: 400;
-  font-size: 11pt;
+  font-size: 14pt;
 }
 
 .side-block{
-  margin-top: 0.5in; 
+  margin-top: 0.4in;
+  font-size: 11pt;
 }
 
 
@@ -360,9 +421,21 @@ li{
   padding: 0;
 }
 
+#contact {
+  margin-top: 0;
+}
+
+#contact ul{
+  margin: 0.05in 0 0.15in;
+  padding: 0;
+}
+
+#contact li{
+  margin: 0.15in 0;
+}
+
 .profile-photo {
 	border-radius: 50%;
-    margin: auto;
 	height: 130px;
     /* top: -59px; */
     display: block;
@@ -370,12 +443,17 @@ li{
 	box-shadow: 0 0 0 2px rgba(0,0,0,0.03)
 }
 
+.skill-section {
+  border-bottom: 1px solid #D8D8D8;
+  margin: 1rem 0;
+}
+
 .skill-rate {
   display: flex;
   justify-content: space-evenly;
   width: 100px;
 }
-
+/**
 .skill-rate-item {
   width: 15px;
   height: 7.5px;
@@ -393,8 +471,60 @@ li{
   border-radius: 2px;
   margin: 3px;
 }
+**/
 
+.skill-rate {
+  height: 6px;
+  width: 100%;
+  background: #D8D8D8;
+  border-radius: 3px;
+  margin: 3px;
+  position: relative;
+}
 
+.skill-rate__progress {
+  position: absolute;
+  height: 100%;
+  border-radius: 3px;
+  background: #40a3d5;
+  left: 0;
+}
+
+.skill-rate__progress--80 {
+  width: 80%;
+}
+
+.skill-rate__progress--70 {
+  width: 70%;
+}
+
+.skill-rate__progress--65 {
+  width: 65%;
+}
+
+.skill-rate__progress--60 {
+  width: 60%;
+}
+
+.skill-rate__progress--55 {
+  width: 55%;
+}
+
+.skill-rate__progress--50 {
+  width: 50%;
+}
+
+.skill-rate__progress--40 {
+  width: 40%;
+}
+
+.skill-rate__progress--30 {
+  width: 30%;
+}
+
+.skill-rate__progress--20 {
+  width: 20%;
+}
 
 #disclaimer code{
   color: #666;
