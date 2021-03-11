@@ -17,11 +17,11 @@
   --sidebar-horizontal-padding: 0.12in;
 
   /* XXX: using px for very good precision control */
-  --decorator-outer-offset-top: 10px;
+  --decorator-outer-offset-top: 12px;
   --decorator-outer-offset-left: -5.5px;
   --decorator-border-width: 1px;
   --decorator-outer-dim: 9px;
-  --decorator-border: 1px solid #ccc;
+  --decorator-border: 0.001in solid #e8e8e8;
 
   --row-blocks-padding-top: 5pt;
   --date-block-width: 0.6in;
@@ -49,10 +49,17 @@ body {
 }
 
 .list-item:before {
-  content: "\2022";
+  content: "-";
   color: var(--color-blue);
   display: inline-block;
+  font-weight: bold;
   left: -0.12in;
+  position: absolute;
+}
+
+.list-item--dotted:before {
+  content: "\2022";
+  font-weight: normal;
   position: absolute;
 }
 
@@ -80,7 +87,7 @@ li {
 #main {
   float: left;
   width: var(--main-width);
-  padding: 0.25in 0.1in 0 0.1in;
+  padding: 0.25in 0.1in 0 0;
   font-size: 8pt;
 }
 
@@ -149,8 +156,8 @@ h2 {
 }
 
 .title-divider {
-  height: 0.5px;
-  background-color: lightgray;
+  height: 0.001in;
+  background-color: #e8e8e8;
   border: none;
 }
 
@@ -177,7 +184,7 @@ h2 {
   color: #40a3d5;
   padding-top: 1rem;
   width: 90%;
-  border-top: 0.5px solid lightgray;
+  border-top: 0.001in solid #e8e8e8;
 }
 
 #main h2 > i {
@@ -461,11 +468,6 @@ h2 {
   margin: 1rem 0;
 }
 
-.skill-rate {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100px;
-}
 /**
 .skill-rate-item {
   width: 15px;
@@ -488,7 +490,7 @@ h2 {
 
 .skill-rate {
   height: 6px;
-  width: 100%;
+  width: auto;
   background: #d8d8d8;
   border-radius: 3px;
   margin: 3px;
