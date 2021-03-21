@@ -95,6 +95,7 @@ li {
 }
 
 #sidebar {
+  height: 22in;
   float: right;
   position: relative; /* for disclaimer */
   width: var(--sidebar-width);
@@ -395,6 +396,7 @@ h2 {
   float: right;
   font-weight: 300;
   font-size: 11pt;
+  margin-right: 0.1in;
 }
 
 .details div {
@@ -437,7 +439,7 @@ h2 {
 
 #contact li > i {
   width: 9pt; /* for text alignment */
-  text-align: right;
+  text-align: center;
 }
 
 #skills {
@@ -460,6 +462,7 @@ h2 {
 
 #contact li {
   margin: 0.15in 0;
+  text-align: center;
 }
 
 .profile-photo {
@@ -473,7 +476,7 @@ h2 {
 
 .skill-section {
   border-bottom: 1px solid #d8d8d8;
-  margin: 1rem 0;
+  margin: 0.3in 0 0.15in;
 }
 
 /**
