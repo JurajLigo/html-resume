@@ -437,32 +437,33 @@ h2 {
   font-size: 11pt;
 }
 
-#contact li > i {
+.contact {
+  margin-top: 0.5in;
+}
+
+.contact ul {
+  margin: 0.05in 0 0.15in;
+  padding: 0;
+}
+
+.contact li {
+  margin: 0.15in 0;
+  text-align: center;
+}
+
+.contact li > i {
   width: 9pt; /* for text alignment */
   text-align: center;
 }
 
-#skills {
+.skills {
+  margin-top: 0.9in;
   line-height: 1.5;
 }
 
-#skills ul {
+.skills ul {
   margin: 0.05in 0 0.15in;
   padding: 0;
-}
-
-#contact {
-  margin-top: 0;
-}
-
-#contact ul {
-  margin: 0.05in 0 0.15in;
-  padding: 0;
-}
-
-#contact li {
-  margin: 0.15in 0;
-  text-align: center;
 }
 
 .profile-photo {
