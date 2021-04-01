@@ -441,6 +441,11 @@ h2 {
   margin-top: 0.5in;
 }
 
+.contact a {
+  color: inherit;
+  text-decoration: unset;
+}
+
 .contact ul {
   margin: 0.05in 0 0.15in;
   padding: 0;
